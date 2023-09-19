@@ -50,7 +50,7 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 	int value;
 	stack_t *new_node;
 
-	if (!arg)
+	if (arg == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -79,6 +79,7 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 	{
 		new_node->next = *stack;
 		(*stack)->prev = new_node;
+		*stack = new_node;
 	}
 
 	*stack = new_node;
