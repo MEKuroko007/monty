@@ -38,7 +38,7 @@ int operation(char *opcode, stack_t **stack, unsigned int ln);
 
 
 void sub(stack_t **stack, unsigned int line_number);
-
+void _div(stack_t **stack, unsigned int line_number);
 
 
 int is_valid_integer(const char *str);
