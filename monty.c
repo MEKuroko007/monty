@@ -15,14 +15,14 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: %s <file_name>\n", argv[0]);
-		return (EXIT_FAILURE);
+		fprintf(stderr, "USAGE: monty file\n", argv[0]);
+		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	stack = NULL;
 	while (fgets(line, sizeof(line), file))
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 		if (result == 1)
 		{   fclose(file);
 			free_stack(&stack);
-			return (EXIT_FAILURE); } }
+			exit(EXIT_FAILURE); } }
 		line_number++;
 	}
 	fclose(file);
