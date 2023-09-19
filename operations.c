@@ -12,6 +12,7 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 	instruction_t opst[] = {
 		{"pall", pall},
 		{"pop", pop},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
@@ -124,3 +125,22 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	free(temp);
 }
+
+
+
+/**
+ * pint - prints the value at the top
+ * @stack: pointer to the stack
+ * @line_number: line number in the file
+ */
+
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}
+
