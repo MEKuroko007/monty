@@ -1,5 +1,5 @@
 #include "monty.h"
-FILE *file;
+
 /**
  * main - Entry point for Monty interpreter
  * @argc: Number of command-line arguments
