@@ -1,4 +1,5 @@
 #include "monty.h"
+FILE *file;
 /**
  * main - Entry point for Monty interpreter
  * @argc: Number of command-line arguments
@@ -9,13 +10,12 @@ int main(int argc, char *argv[])
 {
 	stack_t *stack;
 	unsigned int line_number = 0;
-	FILE *file;
 	char line[100];
 	int result;
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: monty file\n", argv[0]);
+		fprintf(stderr, "Usage: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
@@ -45,5 +45,5 @@ int main(int argc, char *argv[])
 	}
 	fclose(file);
 	free_stack(&stack);
-	return (EXIT_SUCCESS);
+	return(EXIT_SUCCESS);
 }

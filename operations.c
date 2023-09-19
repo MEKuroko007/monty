@@ -53,12 +53,14 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 	if (arg == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(file);
 		exit(EXIT_FAILURE);
 	}
 
 	if (!_isdigit(arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(file);
 		exit(EXIT_FAILURE);
 	}
 
