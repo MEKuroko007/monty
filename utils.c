@@ -26,20 +26,27 @@ int _atoi(const char *s)
 	return (sign * result);
 }
 /**
- * _isdigit - defines if string passed is a number
- *
+ * _isdigit - checks if a string represents a number
  * @s: input string
- * Return: 1 if string is a number. 0 in other case.
+ * Return: 1 if the string is a number
  */
 int _isdigit(const char *s)
 {
-	unsigned int i;
+	unsigned int i = 0;
 
-	for (i = 0; s[i]; i++)
+
+	if (s[0] == '\0')
+		return (0);
+
+	if (s[i] == '-')
+		i++;
+
+	for (; s[i]; i++)
 	{
 		if (s[i] < '0' || s[i] > '9')
 			return (0);
 	}
+
 	return (1);
 }
 

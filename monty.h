@@ -31,6 +31,7 @@ void push(stack_t **stack, unsigned int line_number, const char *arg);
 void pall(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t** stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 int operation(char *opcode, stack_t **stack, unsigned int ln);
 
 int is_valid_integer(const char *str);

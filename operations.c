@@ -13,6 +13,7 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 		{"pall", pall},
 		{"pop", pop},
 		{"pint", pint},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 
@@ -144,3 +145,4 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 
+/*---------------------------------------*/
