@@ -14,6 +14,9 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 		{"pop", pop},
 		{"pint", pint},
 		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 

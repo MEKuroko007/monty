@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	stack_t *stack;
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 	FILE *file;
 	char line[100];
 	int result;
