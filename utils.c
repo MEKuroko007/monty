@@ -1,26 +1,4 @@
 #include "monty.h"
-/**
- * is_valid_integer - check number if integer or not
- * @str:string
- * Return:1 or 0
- */
-int is_valid_integer(const char *str)
-{
-    if (*str == '\0')
-        return (0);
-
-    if (*str == '-' || *str == '+')
-        str++;
-
-    while (*str != '\0')
-    {
-        if (!_isdigit(str))  // Pass the string directly, not a single character
-            return (0);
-        str++;
-    }
-
-    return (1);
-}
 
 /**
  * _atoi - converts a string to an integer
@@ -63,4 +41,25 @@ int _isdigit(const char *s)
             return (0);
     }
     return (1);
+}
+
+
+
+/**
+ * free_stack - Frees all elements of a stack.
+ * @stack: Pointer to the head of the stack.
+ */
+void free_stack(stack_t **stack)
+{
+    stack_t *current = *stack;
+    stack_t *next;
+
+    while (current != NULL)
+    {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    *stack = NULL;
 }
