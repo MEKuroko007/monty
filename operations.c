@@ -19,6 +19,7 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 
@@ -66,7 +67,7 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 
 	if (new_node == NULL)
 	{
-		fprintf(stderr, "Error: Memory allocation failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 

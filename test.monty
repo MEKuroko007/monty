@@ -6,3 +6,7 @@ div
 push 2
 mul
 pall
+push 4
+swap
+mod
+pall
