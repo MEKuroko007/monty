@@ -33,14 +33,14 @@ int _atoi(const char *s)
  */
 int _isdigit(const char *s)
 {
-    unsigned int i;
+	unsigned int i;
 
-    for (i = 0; s[i]; i++)
-    {
-        if (s[i] < '0' || s[i] > '9')
-            return (0);
-    }
-    return (1);
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+	}
+	return (1);
 }
 
 
@@ -51,15 +51,15 @@ int _isdigit(const char *s)
  */
 void free_stack(stack_t **stack)
 {
-    stack_t *current = *stack;
-    stack_t *next;
+	stack_t *current = *stack;
+	stack_t *next;
 
-    while (current != NULL)
-    {
-        next = current->next;
-        free(current);
-        current = next;
-    }
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
 
-    *stack = NULL;
+	*stack = NULL;
 }
