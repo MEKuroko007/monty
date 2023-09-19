@@ -1,6 +1,8 @@
 push 2
-push 3
+                       push 3
 pall
 swap
 div
+push 2
+mul
 pall
