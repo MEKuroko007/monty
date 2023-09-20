@@ -36,6 +36,8 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
 	fclose(file);
+	free_stack(stack); /*this two lines for testing */
+	exit(EXIT_FAILURE);
 	return (1);
 }
 
