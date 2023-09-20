@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	stack_t *stack = NULL;
-	unsigned int line_number = 0;
+	unsigned int line_number = 1;
 	char line[100];
 	int result;
 
