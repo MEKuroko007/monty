@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		}
 		else if (strcmp(opcode, "#") == 0)
 		{
-			return (EXIT_SUCCESS);
+			continue;
 		}
 		else
 		{

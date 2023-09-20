@@ -47,6 +47,10 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void pchar(stack_t** stack, unsigned int number_line);
+void pstr(stack_t **stack, unsigned int line_number);
+
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 void operation(char *opcode, stack_t **stack, unsigned int ln);
 
 

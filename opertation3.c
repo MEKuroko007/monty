@@ -127,8 +127,8 @@ void mod(stack_t **stack, unsigned int line_number)
  */
 void pchar(stack_t **stack, unsigned int line_number)
 {
+	int ascii_value;
 	stack_t *temp;
-	int asciiValue;
 
 	if (*stack == NULL)
 	{
@@ -136,19 +136,21 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	asciiValue = (*stack)->n;
+	ascii_value = (*stack)->n;
 
-	if (asciiValue < 0 || asciiValue > 127)
+	if (ascii_value < 0 || ascii_value > 127)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	putchar(asciiValue);
+	putchar((char)ascii_value);
 	putchar('\n');
 
 	temp = *stack;
 	*stack = (*stack)->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
 	free(temp);
 }
 
