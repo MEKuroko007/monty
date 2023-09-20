@@ -27,6 +27,10 @@ int main(int argc, char *argv[])
 		char *opcode = strtok(line, " \n\t");
 		char *argument = strtok(NULL, " \n\t");
 
+		if (line[0] == '#' || line[0] == '\n')
+		{
+			line_number++;
+			continue; }
 		if (opcode == NULL)
 		{ continue; }
 		if (strcmp(opcode, "push") == 0)
