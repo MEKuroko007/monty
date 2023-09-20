@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	stack_t *stack;
+	stack_t *stack = NULL;
 	unsigned int line_number = 0;
 	char line[100];
 	int result;
@@ -24,14 +24,15 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	stack = NULL;
+	/*stack = NULL;*/
 	while (fgets(line, sizeof(line), file))
 	{
 		char *opcode = strtok(line, " \n\t");
 		char *argument = strtok(NULL, " \n\t");
-
-		if (opcode == NULL)
-		{ continue; }
+		/*
+		*if (opcode == NULL)
+		*{ continue; }
+		*/
 		if (strcmp(opcode, "push") == 0)
 		{	 _push(&stack, line_number, argument); }
 		else
