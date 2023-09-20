@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0;
 	char line[100];
 	int result;
-	FILE *file;
 
 	if (argc != 2)
 	{
@@ -39,7 +38,7 @@ int main(int argc, char *argv[])
 		{
 		result = operation(opcode, &stack, line_number);
 		if (result == 1)
-		{   fclose(file);
+		{   /*fclose(file);*/
 			free_stack(&stack);
 			exit(EXIT_FAILURE); } }
 		line_number++;

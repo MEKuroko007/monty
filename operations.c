@@ -35,6 +35,7 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 		i++;
 	}
 	fprintf(stderr, "L%d: Unknown instruction %s\n", ln, opcode);
+	fclose(file);
 	return (1);
 }
 
@@ -53,6 +54,7 @@ void _push(stack_t **stack, unsigned int line_number, const char *arg)
 	if (arg == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(file);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -60,6 +62,7 @@ void _push(stack_t **stack, unsigned int line_number, const char *arg)
 	if (!_isdigit(arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(file);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -70,6 +73,7 @@ void _push(stack_t **stack, unsigned int line_number, const char *arg)
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		fclose(file);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -85,6 +89,7 @@ void _push(stack_t **stack, unsigned int line_number, const char *arg)
 	}
 	*stack = new_node;
 }
+
 /**
  * _pall - print the elements of the stack
  * @stack: pointer to the stack
