@@ -30,6 +30,7 @@ void operation(char *opcode, stack_t **stack, unsigned int ln)
 		if (strcmp(opcode, opst[i].opcode) == 0)
 		{
 			opst[i].f(stack, ln);
+			return;
 		}
 		i++;
 	}
