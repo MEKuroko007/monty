@@ -16,7 +16,6 @@ void pstr(stack_t **stack, unsigned int line_number)
 		printf("%c",(current->n));
 		current = current->next;
 	}
-
 	printf("\n");
 }
 /**
