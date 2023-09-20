@@ -3,9 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -49,6 +46,7 @@ void pint(stack_t** stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
+void pchar(stack_t** stack, unsigned int number_line);
 void operation(char *opcode, stack_t **stack, unsigned int ln);
 
 

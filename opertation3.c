@@ -119,3 +119,37 @@ void mod(stack_t **stack, unsigned int line_number)
 	first->next = NULL;
 	free(first);
 }
+/**
+ * pchar - prints the char at the top of the stack,
+ * followed by a new line.
+ * @stack: pointer to the stack
+ * @line_number: line number in the file
+ */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+	int asciiValue;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	asciiValue = (*stack)->n;
+
+	if (asciiValue < 0 || asciiValue > 127)
+	{
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	putchar(asciiValue);
+	putchar('\n');
+
+	temp = *stack;
+	*stack = (*stack)->next;
+	free(temp);
+}
+
+
