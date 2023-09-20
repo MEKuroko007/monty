@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0;
 	char line[100];
 	int result;
+	FILE *file;
 
 	if (argc != 2)
 	{
