@@ -29,17 +29,16 @@ int main(int argc, char *argv[])
 	{
 		char *opcode = strtok(line, " \n\t");
 		char *argument = strtok(NULL, " \n\t");
-		/*
-		*if (opcode == NULL)
-		*{ continue; }
-		*/
+
+		if (opcode == NULL)
+		{ continue; }
 		if (strcmp(opcode, "push") == 0)
 		{	 _push(&stack, line_number, argument); }
 		else
 		{
 		result = operation(opcode, &stack, line_number);
 		if (result == 1)
-		{   /*fclose(file);*/
+		{   fclose(file);
 			free_stack(&stack);
 			exit(EXIT_FAILURE); } }
 		line_number++;
