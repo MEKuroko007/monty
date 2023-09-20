@@ -11,39 +11,41 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	unsigned int line_number = 1;
 	char line[100];
-	int result;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
+
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	/*stack = NULL;*/
+
 	while (fgets(line, sizeof(line), file))
 	{
 		char *opcode = strtok(line, " \n\t");
 		char *argument = strtok(NULL, " \n\t");
 
 		if (opcode == NULL)
-		{ continue; }
+		{
+			continue;
+		}
 		if (strcmp(opcode, "push") == 0)
-		{	 _push(&stack, line_number, argument); }
+		{
+			_push(&stack, line_number, argument);
+		}
 		else
 		{
-		result = operation(opcode, &stack, line_number);
-		if (result == 1)
-		{   fclose(file);
-			free_stack(&stack);
-			exit(EXIT_FAILURE); } }
+			operation(opcode, &stack, line_number);
+		}
 		line_number++;
 	}
+
 	fclose(file);
 	free_stack(&stack);
-	return (0);
+	return (EXIT_SUCCESS);
 }

@@ -7,7 +7,7 @@
  * @ln:line number
  * Return: 0 on success, 1 if the opcode is unknown.
  */
-int operation(char *opcode, stack_t **stack, unsigned int ln)
+void operation(char *opcode, stack_t **stack, unsigned int ln)
 {
 	instruction_t opst[] = {
 		{"pall", _pall},
@@ -30,16 +30,15 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 		if (strcmp(opcode, opst[i].opcode) == 0)
 		{
 			opst[i].f(stack, ln);
-			return (0);
 		}
 		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
 	fclose(file);
-	free_stack(stack); /*this two lines for testing */
+	free_stack(stack);
 	exit(EXIT_FAILURE);
-	return (1);
 }
+
 
 
 /**

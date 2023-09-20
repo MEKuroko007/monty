@@ -49,7 +49,7 @@ void pint(stack_t** stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
-int operation(char *opcode, stack_t **stack, unsigned int ln);
+void operation(char *opcode, stack_t **stack, unsigned int ln);
 
 
 void sub(stack_t **stack, unsigned int line_number);
