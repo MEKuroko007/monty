@@ -38,7 +38,6 @@ typedef struct instruction_s
 
 extern FILE *file;
 FILE *file;
-
 void _push(stack_t **stack, unsigned int line_number, const char *arg);
 void _pall(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
