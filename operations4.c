@@ -46,6 +46,10 @@ void rotl(stack_t **stack, unsigned int line_number)
 		*stack = second;
 		second->prev = NULL;
 	}
+	else
+	{
+		return;
+	}
 }
 /**
  * rotr - rotates the stack to the bottom.
