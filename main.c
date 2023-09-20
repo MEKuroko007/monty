@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		char *opcode = strtok(line, " \n\t");
 		char *argument = strtok(NULL, " \n\t");
 
-		if (opcode == NULL || (strcmp(opcode, "#") == 0))
+		if (opcode == NULL || opcode[0] == '#')
 		{line_number++;
 			continue; }
 		if (strcmp(opcode, "push") == 0)
