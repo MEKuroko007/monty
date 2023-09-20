@@ -144,8 +144,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	putchar((char)ascii_value);
-	putchar('\n');
+	printf("%c\n",ascii_value);
 
 	temp = *stack;
 	*stack = (*stack)->next;
