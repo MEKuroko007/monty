@@ -69,17 +69,20 @@ void rotr(stack_t **stack, unsigned int line_number)
 	{
 		;
 	}
-
-	last = *stack;
-
-	while (last->next)
+	else
 	{
-		last = last->next;
+		last = *stack;
+
+		while (last->next)
+		{
+			last = last->next;
+		}
+
+		last->next = *stack;
+		last->prev->next = NULL;
+		last->prev = NULL;
+		(*stack)->prev = last;
+		(*stack) = last;
 	}
 
-	last->next = *stack;
-	last->prev->next = NULL;
-	last->prev = NULL;
-	(*stack)->prev = last;
-	(*stack) = last;
 }

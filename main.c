@@ -5,7 +5,6 @@
  * @argv: Array of command-line argument strings
  * Return: EXIT_SUCCESS if successful, EXIT_FAILURE on failure
  */
-
 int main(int argc, char *argv[])
 {
 	stack_t *stack = NULL;
