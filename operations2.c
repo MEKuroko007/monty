@@ -56,11 +56,11 @@ void add(stack_t **stack, unsigned int line_number)
 	free(first);
 }
 /**
- * nop - doesn’t do anything.
+ * _nop - doesn’t do anything.
  * @stack: pointer to the stack
  * @line_number: line number in the file
  */
-void nop(stack_t **stack, unsigned int line_number)
+void _nop(stack_t **stack, unsigned int line_number)
 {
 
 	(void) stack;

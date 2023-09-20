@@ -10,12 +10,12 @@
 int operation(char *opcode, stack_t **stack, unsigned int ln)
 {
 	instruction_t opst[] = {
-		{"pall", pall},
+		{"pall", _pall},
 		{"pop", pop},
 		{"pint", pint},
 		{"swap", swap},
 		{"add", add},
-		{"nop", nop},
+		{"nop", _nop},
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
@@ -40,12 +40,12 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 
 
 /**
- * push - add item to the stack
+ * _push - add item to the stack
  * @stack: pointer to the stack
  * @arg: value to push
  * @line_number: line number in the file
  */
-void push(stack_t **stack, unsigned int line_number, const char *arg)
+void _push(stack_t **stack, unsigned int line_number, const char *arg)
 {
 	int value;
 	stack_t *new_node;
@@ -86,12 +86,12 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 	*stack = new_node;
 }
 /**
- * pall - print the elements of the stack
+ * _pall - print the elements of the stack
  * @stack: pointer to the stack
  * @line_number: line number in the file
  */
 
-void pall(stack_t **stack, unsigned int line_number)
+void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 

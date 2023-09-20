@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		if (opcode == NULL)
 		{ continue; }
 		if (strcmp(opcode, "push") == 0)
-		{	 push(&stack, line_number, argument); }
+		{	 _push(&stack, line_number, argument); }
 		else
 		{
 		result = operation(opcode, &stack, line_number);
