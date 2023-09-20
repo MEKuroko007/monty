@@ -34,7 +34,7 @@ int operation(char *opcode, stack_t **stack, unsigned int ln)
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: Unknown instruction %s\n", ln, opcode);
+	fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
 	fclose(file);
 	return (1);
 }
