@@ -33,10 +33,6 @@ int main(int argc, char *argv[])
 		{
 			_push(&stack, line_number, argument);
 		}
-		else if (strcmp(opcode, "#") == 0)
-		{
-			continue;
-		}
 		else
 		{
 			operation(opcode, &stack, line_number);
