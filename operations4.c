@@ -13,11 +13,11 @@ void pstr(stack_t **stack, unsigned int line_number)
 	while (current != NULL && current->n != 0 && current->n >= 0
 	&& current->n <= 127)
 	{
-		printf((char)(current->n));
+		printf("%d",(current->n));
 		current = current->next;
 	}
 
-	printf('\n');
+	printf("\n");
 }
 /**
  * rotl -  rotates the stack to the top.
