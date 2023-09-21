@@ -114,7 +114,7 @@ Here are the key features of Brainfuck:
 
 ## Feedback
 
-If you have any feedback, please reach out to us at salhy@oy..
+If you have any feedback, please reach out to us at salhy@oy.com.
 
 
 ## Links
