@@ -128,7 +128,6 @@ void mod(stack_t **stack, unsigned int line_number)
 void pchar(stack_t **stack, unsigned int line_number)
 {
 	int ascii_value;
-	stack_t *temp;
 
 	if (*stack == NULL)
 	{
@@ -150,11 +149,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", ascii_value);
 
-	temp = *stack;
-	*stack = (*stack)->next;
-	if (*stack != NULL)
-		(*stack)->prev = NULL;
-	free(temp);
 }
 
 
