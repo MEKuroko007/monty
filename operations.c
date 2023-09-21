@@ -10,12 +10,12 @@
 void operation(char *opcode, stack_t **stack, unsigned int ln)
 {
 	instruction_t opst[] = {
-		{"pall", _pall},
+		{"pall", pall},
 		{"pop", pop},
 		{"pint", pint},
 		{"swap", swap},
 		{"add", add},
-		{"nop", _nop},
+		{"nop", nop},
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
@@ -43,66 +43,13 @@ void operation(char *opcode, stack_t **stack, unsigned int ln)
 	free_stack(stack);
 	exit(EXIT_FAILURE);
 }
-
-
-
 /**
- * _push - add item to the stack
- * @stack: pointer to the stack
- * @arg: value to push
- * @line_number: line number in the file
- */
-void _push(stack_t **stack, unsigned int line_number, const char *arg)
-{
-	int value;
-	stack_t *new_node;
-
-	if (arg == NULL)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		fclose(file);
-		free_stack(stack);
-		exit(EXIT_FAILURE);
-	}
-
-	if (!_isdigit(arg))
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		fclose(file);
-		free_stack(stack);
-		exit(EXIT_FAILURE);
-	}
-
-	value = _atoi(arg);
-	new_node = malloc(sizeof(stack_t));
-
-	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		fclose(file);
-		free_stack(stack);
-		exit(EXIT_FAILURE);
-	}
-
-	new_node->n = value;
-	new_node->prev = NULL;
-	new_node->next = NULL;
-
-	if (*stack != NULL)
-	{
-		new_node->next = *stack;
-		(*stack)->prev = new_node;
-	}
-	*stack = new_node;
-}
-
-/**
- * _pall - print the elements of the stack
+ * pall - print the elements of the stack
  * @stack: pointer to the stack
  * @line_number: line number in the file
  */
 
-void _pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 

@@ -38,19 +38,23 @@ typedef struct instruction_s
 
 extern FILE *file;
  FILE *file;
-void _push(stack_t **stack, unsigned int line_number, const char *arg);
-void _pall(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int line_number, const char *arg, int mode);
+void push_queue(stack_t **stack, stack_t *new_node);
+void push_stack(stack_t **stack, stack_t *new_node);
+int check_push_args(unsigned int line_number, const char *arg);
+
+void operation(char *opcode, stack_t **stack, unsigned int ln);
+void pall(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t** stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
-void _nop(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 void pchar(stack_t** stack, unsigned int number_line);
 void pstr(stack_t **stack, unsigned int line_number);
 
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
-void operation(char *opcode, stack_t **stack, unsigned int ln);
 
 
 void sub(stack_t **stack, unsigned int line_number);
